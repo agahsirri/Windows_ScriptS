@@ -32,4 +32,4 @@ IF EXIST "C:\Certiport\Console\" (
 	COPY /Y "%PATH_PROGRAMS%\CertiportConsole.lnk" "C:\Users\Public\Desktop\" && ECHO %ComputerName% ; Certiport_Console ; ADD_new_lnk_dtop ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; Certiport_Console ; ADD_new_lnk_dtop ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" 
 ) ELSE (
 	ECHO %ComputerName% ; Certiport_Console ; SoftwareExist ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" 
-)
+)

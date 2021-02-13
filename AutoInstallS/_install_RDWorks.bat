@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\RDWorks
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\RDWorks
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 :PROCESSSTART
@@ -41,4 +41,4 @@ IF NOT EXIST "C:\RDWorksV8" (ECHO %ComputerName% ; RDWorks ; uninstall ; OK ; %d
 XCopy /y /c /h /r /i "%PATH_PROGRAMS%\RDWorksV8*.*" "C:\RDWorksV8\" && ECHO %ComputerName% ; RDWorks ; Copy ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; RDWorks ; Copy ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 XCopy /y /c /h /r /i "%PATH_PROGRAMS%\RDWorksV8.lnk" "%SystemDrive%\Users\Public\Desktop\" && ECHO %ComputerName% ; RDWorks ; Shortcut ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; RDWorks ; Shortcut ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 
-REM popd
+REM popd

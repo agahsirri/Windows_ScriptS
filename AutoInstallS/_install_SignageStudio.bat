@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\SignageStudio
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\SignageStudio
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 
@@ -42,4 +42,4 @@ REM IF NOT EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" (ECH
 "%PATH_PROGRAMS%\SignageStudio.exe" /S && ECHO %ComputerName% ; SignageStudio ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles(x86)%\SignageStudio\SignageStudio.exe" (ECHO %ComputerName% ; SignageStudio ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; SignageStudio ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

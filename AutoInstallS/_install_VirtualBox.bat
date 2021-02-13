@@ -21,9 +21,9 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\VirtualBox
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
-set PATH_PROCESS=\\172.2.5.1\Software\ProgramS\_ScriptS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\VirtualBox
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
+set PATH_PROCESS=\\172.2.2.4\Software\ProgramS\_ScriptS
 
 REM pushd %_CUR_PATH%
 :PROCESSSTART
@@ -45,4 +45,4 @@ COPY /Y "%PATH_PROGRAMS%\VirtualBox_run*.*" "%ProgramFiles%\Oracle\VirtualBox\" 
 COPY /Y "%PATH_PROGRAMS%\VirtualBox.lnk" "C:\Users\Public\Desktop\" && ECHO %ComputerName% ; VirtualBox ; ADD_new_lnk_dtop ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; VirtualBox ; ADD_new_lnk_dtop ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" 
 IF EXIST "%ProgramFiles%\Oracle\VirtualBox\VirtualBox.exe" (ECHO %ComputerName% ; VirtualBox ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; VirtualBox ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

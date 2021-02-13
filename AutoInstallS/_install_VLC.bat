@@ -42,4 +42,3 @@ IF NOT EXIST "%ProgramFiles%\VideoLAN\VLC\vlc.exe" (ECHO %ComputerName% ; VLC ; 
 :INSVLC
 "%PATH_PROGRAMS%\vlc_setup.exe" /L=1033 /S && ECHO %ComputerName% ; VLC ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles%\VideoLAN\VLC\vlc.exe" (ECHO %ComputerName% ; VLC ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; VLC ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
-

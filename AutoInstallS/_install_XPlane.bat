@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\X-Plane
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\X-Plane
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 
@@ -34,4 +34,4 @@ REM IF EXIST "%ProgramFiles(x86)%\X-Plane-Fly-To-Learn\XPLANE9.iso" Powershell -
 NETSH firewall add allowedprogram "%ProgramFiles(x86)%\X-Plane-Fly-To-Learn\X-Plane.exe" XPlane ENABLE  && ECHO %ComputerName% ; X-Plane ; Firewall ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; X-Plane ; Firewall ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 XCopy /y /c /h /r /i /s /d "%PATH_PROGRAMS%\*.lnk" "%SystemDrive%\Users\Public\Desktop\" && ECHO %ComputerName% ; X-Plane ; Shortcut ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; X-Plane ; Shortcut ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 
-REM popd
+REM popd

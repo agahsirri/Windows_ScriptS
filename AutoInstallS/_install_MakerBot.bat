@@ -21,9 +21,9 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\MakerBot
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
-set PATH_PROCESS=\\172.2.5.1\Software\ProgramS\_ScriptS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\MakerBot
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
+set PATH_PROCESS=\\172.2.2.4\Software\ProgramS\_ScriptS
 
 REM pushd %_CUR_PATH%
 :PROCESSSTART
@@ -43,4 +43,4 @@ IF NOT EXIST "%ProgramFiles%\MakerBot\MakerWare\makerware.exe" (ECHO %ComputerNa
 "%PATH_PROGRAMS%\MakerBot.exe" /S && ECHO %ComputerName% ; MakerBot ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles%\MakerBot\MakerWare\makerware.exe" (ECHO %ComputerName% ; MakerBot ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; MakerBot ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

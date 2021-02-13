@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\TestNav
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\TestNav
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 set Parameter1=
 set Parameter2=
 
@@ -46,4 +46,3 @@ XCopy /y /c /h /r /i "%PATH_PROGRAMS%\TestNav_run.*" "%ProgramFiles(x86)%\TestNa
 XCopy /y /c /h /r /i "%PATH_PROGRAMS%\TestNav.lnk" "%SystemDrive%\Users\Public\Desktop\" && ECHO %ComputerName% ; TestNav ; Shortcut ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; TestNav ; Shortcut ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 %Parameter1% 
 COLOR 07
-

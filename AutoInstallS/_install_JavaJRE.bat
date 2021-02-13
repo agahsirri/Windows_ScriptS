@@ -46,4 +46,3 @@ COLOR 07
 wmic product get name | findstr /i /C:"Java 8" & (IF NOT ERRORLEVEL 1 (ECHO %ComputerName% ; JavaJRE ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; JavaJRE ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"))
 %Parameter1% 
 COLOR 07
-

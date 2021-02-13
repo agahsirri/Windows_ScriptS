@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\Google
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\Google
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM IF NOT EXIST "%WINDIR%\%~nx0" (GOTO :PROCESSSTART) ELSE (del /q /f "%WINDIR%\%~nx0")
 
@@ -43,4 +43,4 @@ IF NOT EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" (ECHO %C
 "%WinDir%\System32\msiexec.exe" /i "%PATH_PROGRAMS%\Chrome.msi" /qn /norestart && ECHO %ComputerName% ; Chrome ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" (ECHO %ComputerName% ; Chrome ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; Chrome ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

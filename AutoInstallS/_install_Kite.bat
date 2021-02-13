@@ -41,4 +41,4 @@ REM IF NOT EXIST "%ProgramFiles(x86)%\Kite Student Portal\kite.exe" (ECHO %Compu
 "%Windir%\System32\msiexec.exe" /i "%PATH_PROGRAMS%\Kite.msi" /qn /norestart && ECHO %ComputerName% ; Kite ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles(x86)%\PLTW Kite Student Portal\kitestudentportal.exe" (ECHO %ComputerName% ; Kite ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; Kite ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

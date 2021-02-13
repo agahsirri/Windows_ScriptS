@@ -21,9 +21,9 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\Mozilla
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
-set PATH_PROCESS=\\172.2.5.1\Software\ProgramS\_ScriptS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\Mozilla
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
+set PATH_PROCESS=\\172.2.2.4\Software\ProgramS\_ScriptS
 
 REM IF NOT EXIST "%WINDIR%\%~nx0" (GOTO :PROCESSSTART) ELSE (del /q /f "%WINDIR%\%~nx0")
 
@@ -48,4 +48,4 @@ IF NOT EXIST "C:\Users\oses\AppData\Local\Mozilla Firefox\firefox.exe" (ECHO %Co
 :INSFIREFOX
 REM "%PATH_PROGRAMS%\Firefox.exe" -ms && ECHO %ComputerName% ; Firefox ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 REM IF EXIST "%ProgramFiles%\Mozilla Firefox\firefox.exe" (ECHO %ComputerName% ; Firefox ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; Firefox ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
-REM "%PATH_PROCESS%\SetDefaultBrowser.exe ff" && ECHO %ComputerName% ; Firefox ; SetDefault ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
+REM "%PATH_PROCESS%\SetDefaultBrowser.exe ff" && ECHO %ComputerName% ; Firefox ; SetDefault ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"

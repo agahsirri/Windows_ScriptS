@@ -50,4 +50,4 @@ DEL /F /Q "C:\Users\Public\Desktop\Console*.lnk" && ECHO %ComputerName% ; Certip
 COPY /Y "%PATH_PROGRAMS%\CertiportConsole*.*" "C:\Certiport\Console\" && ECHO %ComputerName% ; Certiport_Console ; ADD_new_EXEs ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; Certiport_Console ; ADD_new_EXEs ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" 
 COPY /Y "%PATH_PROGRAMS%\CertiportConsole.lnk" "C:\Users\Public\Desktop\" && ECHO %ComputerName% ; Certiport_Console ; ADD_new_lnk_dtop ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; Certiport_Console ; ADD_new_lnk_dtop ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" 
 
-REM popd
+REM popd

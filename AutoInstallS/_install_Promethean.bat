@@ -63,4 +63,4 @@ IF NOT EXIST "%ProgramFiles(x86)%\Activ Software\Inspire\Inspire.exe" (ECHO %Com
 "%WinDir%\System32\msiexec.exe" /i "%PATH_PROGRAMS%\ActivInspire.msi" /qn /norestart TRANSFORMS="%PATH_PROGRAMS%\ActivInspire.mst" && ECHO %ComputerName% ; ActivInspire ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles(x86)%\Activ Software\Inspire\Inspire.exe" (ECHO %ComputerName% ; ActivInspire ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; ActivInspire ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

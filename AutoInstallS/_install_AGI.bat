@@ -21,9 +21,9 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\AGI
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
-set PROCESS=\\172.2.5.1\Software\ProgramS\_ScriptS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\AGI
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
+set PROCESS=\\172.2.2.4\Software\ProgramS\_ScriptS
 
 REM pushd %_CUR_PATH%
 
@@ -45,4 +45,3 @@ NETSH firewall add allowedprogram "%ProgramFiles(x86)%\AGI\STK 10\bin\AgUiApplic
 REM "%WinDir%\Regedit.exe" /s "%PROCESS%\_install_AGI.reg" && ECHO %ComputerName% ; AGI_STK_Reg ; Register ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; AGI_STK_Reg ; Register ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 
 REM popd
-

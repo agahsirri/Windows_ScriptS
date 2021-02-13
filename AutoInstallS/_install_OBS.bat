@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\OBS
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\OBS
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 
@@ -42,4 +42,4 @@ IF NOT EXIST "%ProgramFiles%\obs-studio\bin\64bit\obs64.exe" (ECHO %ComputerName
 "%PATH_PROGRAMS%\OBS.exe" /S && ECHO %ComputerName% ; OBS ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles%\obs-studio\bin\64bit\obs64.exe" (ECHO %ComputerName% ; OBS ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; OBS ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

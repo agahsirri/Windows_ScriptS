@@ -55,4 +55,4 @@ powershell -executionPolicy bypass -file "%PATH_PROCESS%\_UninstallSoftware.ps1"
 "%PATH_CONFIG%\multiplatform_201808281612_wopsw.exe" --valsetuppwd=258i69 /l="%PATH_LOGS%\BIOSs\BIOS-%ComputerName%.log" && ECHO %ComputerName% ; BIOS ; update ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; BIOS ; update ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 RMDIR /S /Q "%WinDir%\Temp\." && ECHO %ComputerName% ; %WinDir%\Temp ; Flush ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; %WinDir%\Temp ; Flush ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 
-popd
+popd

@@ -50,4 +50,4 @@ REM --- B3_18 --- "%WinDir%\System32\msiexec.exe" /i "%PATH_PROGRAMS%\SMARTLearn
 "%WinDir%\System32\msiexec.exe" /i "%PATH_PROGRAMS%\SMARTLearningSuite.msi" CUSTOMER_LOGGING=0 PRODUCT_NOTIFICATION=0 START_SNMP_SERVICE=1 /qn /norestart && ECHO %ComputerName% ; SmartSuite19 ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 SC QUERYEX "SmartControl" | FIND "STATE" | FIND /v "STOPPED" > NUL && (ECHO %ComputerName% ; SmartSuite19 ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") || (ECHO %ComputerName% ; SmartSuite19 ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 IF EXIST "%ProgramFiles(x86)%\SMART Technologies\Education Software\Notebook.exe" (ECHO %ComputerName% ; SmartSuite19 ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; SmartSuite19 ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
-REM popd
+REM popd

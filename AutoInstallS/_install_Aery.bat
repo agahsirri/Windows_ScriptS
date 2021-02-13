@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\Aery
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\Aery
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 
@@ -33,4 +33,4 @@ IF NOT EXIST "%ProgramFiles(x86)%\Aery" (
    XCOPY /S /I /Y "%PATH_PROGRAMS%\Aery.lnk" "%SystemDrive%\Users\Public\Desktop\" && ECHO %ComputerName% ; Aery ; Shortcut ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; Aery ; Shortcut ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 )
 
-REM popd
+REM popd

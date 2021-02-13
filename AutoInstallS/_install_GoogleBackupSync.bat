@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\Google
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\Google
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 :PROCESSSTART
@@ -41,4 +41,4 @@ IF NOT EXIST "%ProgramFiles(x86)%\Google\GoogleBackupSync.exe" (ECHO %ComputerNa
 "%WinDir%\System32\msiexec.exe" /i "%PATH_PROGRAMS%\GoogleBackupSync.msi" /n && ECHO %ComputerName% ; GoogleBackupSync ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles(x86)%\Google\GoogleBackupSync.exe" (ECHO %ComputerName% ; GoogleBackupSync ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; GoogleBackupSync ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

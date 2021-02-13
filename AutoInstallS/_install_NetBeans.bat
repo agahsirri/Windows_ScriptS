@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\NetBeans
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\NetBeans
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 :PROCESSSTART
@@ -39,4 +39,4 @@ IF NOT EXIST "%ProgramFiles%\NetBeans 8.0.2\bin\netbeans64.exe" (ECHO %ComputerN
 :INSNETBEAN
 "%PATH_PROGRAMS%\NetBeans.exe" --silent && ECHO %ComputerName% ; NetBeans ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles%\NetBeans 8.0.2\bin\netbeans64.exe" (ECHO %ComputerName% ; NetBeans ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; NetBeans ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
-REM popd
+REM popd

@@ -21,9 +21,9 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\DaemonToolsLite
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
-set PATH_PROCESS=\\172.2.5.1\Software\ProgramS\_ScriptS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\DaemonToolsLite
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
+set PATH_PROCESS=\\172.2.2.4\Software\ProgramS\_ScriptS
 
 REM pushd %_CUR_PATH%
 
@@ -32,4 +32,4 @@ REM pushd %_CUR_PATH%
 IF NOT EXIST "%ProgramFiles%\DAEMON Tools Lite\DTLite.exe" "%PATH_PROGRAMS%\DaemonToolsLite.exe" /S /nogadget /sptd && ECHO %ComputerName% ; DaemonToolsLite ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles%\DAEMON Tools Lite\DTLite.exe" (ECHO %ComputerName% ; DaemonToolsLite ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; DaemonToolsLite ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

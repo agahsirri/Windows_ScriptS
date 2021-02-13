@@ -41,4 +41,4 @@ IF NOT EXIST "%ProgramFiles(x86)%\FSASecureBrowser\FSASecureBrowser.exe" (ECHO %
 "%WinDir%\System32\msiexec.exe" /i "%PATH_PROGRAMS%\FSASecureBrowser.msi" /qn /norestart && ECHO %ComputerName% ; FSASecureBrowser ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles(x86)%\FLSecureBrowser\FLSecureBrowser.exe" (ECHO %ComputerName% ; FSASecureBrowser ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; FSASecureBrowser ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

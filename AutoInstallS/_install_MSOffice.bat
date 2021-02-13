@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\Microsoft\MSOffice365
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\Microsoft\MSOffice365
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 :PROCESSSTART
@@ -40,4 +40,4 @@ IF NOT EXIST "%ProgramFiles%\Microsoft Office\root\Office16\EXCEL.EXE" (ECHO %Co
 IF NOT EXIST "%ProgramFiles%\Microsoft Office\root\Office16\EXCEL.EXE" ("%PATH_PROGRAMS%\O365ProPlus.exe" /configure "%PATH_PROGRAMS%\O365ProPlus.xml") ELSE (ECHO %ComputerName% ; MSOffice ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 IF EXIST "%ProgramFiles%\Microsoft Office\root\Office16\EXCEL.EXE" (ECHO %ComputerName% ; MSOffice ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; MSOffice ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

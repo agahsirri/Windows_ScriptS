@@ -55,4 +55,3 @@ COPY /Y "%SystemDrive%\Software\Respondus_LDB\LockDown Browser.lnk" "C:\Users\Pu
 FOR /d %%G IN ("%SystemDrive%\Software\Respondus*") DO RMDIR /S /Q "%%~G" && ECHO %ComputerName% ; Respondus_LDB ; Deleted_"%%~G" ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; Respondus_LDB ; Deleted_"%%~G" ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 %Parameter1%
 COLOR 07
-

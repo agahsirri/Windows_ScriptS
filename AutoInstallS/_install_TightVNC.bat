@@ -42,4 +42,4 @@ IF EXIST "%ProgramFiles%\TightVNC\tvnserver.exe" (
     SC QUERYEX "tvnserver" | FIND "STATE" | FIND /v "STOPPED" > NUL && (ECHO %ComputerName% ; TightVNC ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") || (ECHO %ComputerName% ; TightVNC ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
    )
 
-REM popd
+REM popd

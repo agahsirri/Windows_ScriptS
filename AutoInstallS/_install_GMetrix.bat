@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\GMetrix
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\GMetrix
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 set Parameter1=
 set Parameter2=
 
@@ -47,4 +47,4 @@ FOR /r "%ProgramFiles(x86)%\GMetrix\" %%G IN ("GMetrix.exe") DO (IF [%%G] EQU []
 :END
 %Parameter1% 
 COLOR 07
-EXIT /B
+EXIT /B

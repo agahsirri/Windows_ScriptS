@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\Autodesk\Inventor2019
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\Autodesk\Inventor2019
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 set Parameter1=
 set Parameter2=
 
@@ -49,4 +49,3 @@ IF NOT EXIST "%ProgramFiles%\Autodesk\Inventor 2019\bin\Inventor.exe" "%SystemDr
 IF EXIST "%ProgramFiles%\Autodesk\Inventor 2019\bin\Inventor.exe" ((ECHO %ComputerName% ; AutodeskInventor2019 ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") & (RMDIR /S /Q "%SystemDrive%\Software\Inventor2019"&& ECHO %ComputerName% ; AutodeskInventor ; Deleted_"%SystemDrive%\Software\Inventor2019" ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; AutodeskInventor ; Deleted_"%SystemDrive%\Software\Inventor2019" ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")) ELSE (ECHO %ComputerName% ; AutodeskInventor2019 ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 %Parameter1% 
 COLOR 07
-

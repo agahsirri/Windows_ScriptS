@@ -21,9 +21,9 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\TeamViewer
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
-set PROCESS=\\172.2.5.1\Software\ProgramS\_ScriptS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\TeamViewer
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
+set PROCESS=\\172.2.2.4\Software\ProgramS\_ScriptS
 
 REM pushd %_CUR_PATH%
 
@@ -45,4 +45,4 @@ IF NOT EXIST "%ProgramFiles(x86)%\TeamViewer\TeamViewer.exe" (ECHO %ComputerName
 
 SC QUERYEX "TeamViewer" | FIND "STATE" | FIND /v "STOPPED" > NUL && (ECHO %ComputerName% ; TeamViewer ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") || (ECHO %ComputerName% ; TeamViewer ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

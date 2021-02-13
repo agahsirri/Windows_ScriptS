@@ -21,9 +21,9 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\BasicKit
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
-set PATH_PROCESS=\\172.2.5.1\Software\ProgramS\_ScriptS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\BasicKit
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
+set PATH_PROCESS=\\172.2.2.4\Software\ProgramS\_ScriptS
 
 pushd %PATH_PROGRAMS%
 
@@ -54,4 +54,4 @@ IF EXIST "%ProgramFiles%\TightVNC\tvnserver.exe" (
 powershell -executionPolicy bypass -file "%PATH_PROCESS%\_UninstallSoftware.ps1" && ECHO %ComputerName% ; JunkSoftwareS ; uninstall ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; JunkSoftwareS ; uninstall ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 REM "%PATH_PROGRAMS%\_WindowsUpdateS.lnk"
 
-popd
+popd

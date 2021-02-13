@@ -58,4 +58,3 @@ IF EXIST "%ProgramFiles(x86)%\CBSecureBrowser\CBSecureBrowser.exe" (ECHO %Comput
 REM %Parameter1%
 REM EXIT /b 1
 COLOR 07
-

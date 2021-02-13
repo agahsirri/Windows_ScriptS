@@ -41,4 +41,4 @@ IF NOT EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" (ECHO %C
 "%WinDir%\System32\msiexec.exe" /i "%PATH_PROGRAMS%\Chrome.msi" /qn /norestart && ECHO %ComputerName% ; Chrome ; install ; STARTED ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 IF EXIST "%ProgramFiles(x86)%\Google\Chrome\Application\chrome.exe" (ECHO %ComputerName% ; Chrome ; install ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log") ELSE (ECHO %ComputerName% ; Chrome ; install ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log")
 
-REM popd
+REM popd

@@ -21,8 +21,8 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\NetBeans
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\NetBeans
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
 
 REM pushd %_CUR_PATH%
 :PROCESSSTART
@@ -42,4 +42,4 @@ IF EXIST "%ProgramFiles%\NetBeans 8.0.2\bin\netbeans64.exe" (ECHO %ComputerName%
 
 REM popd
 REM License Name: Orlando Science Schools
-REM Authorization Code: MPFJAC-1Q3N5H-W19X2F-1HUW6J
+REM Authorization Code: MPFJAC-1Q3N5H-W19X2F-1HUW6J

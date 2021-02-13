@@ -21,9 +21,9 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
-set PATH_PROGRAMS=\\172.2.5.1\Software\ProgramS\AndroidStudio
-set PATH_LOGS=\\172.2.5.1\Software\ProgramS\_LogS
-set PATH_PROCESS=\\172.2.5.1\Software\ProgramS\_ScriptS
+set PATH_PROGRAMS=\\172.2.2.4\Software\ProgramS\AndroidStudio
+set PATH_LOGS=\\172.2.2.4\Software\ProgramS\_LogS
+set PATH_PROCESS=\\172.2.2.4\Software\ProgramS\_ScriptS
 
 REM pushd %_CUR_PATH%
 
@@ -33,4 +33,4 @@ REM IF NOT EXIST "%ProgramFiles%\Android\Android Studio\SDK" mkdir "%ProgramFile
 "%WinDir%\Regedit.exe" /s "%PATH_PROCESS%\_install_AndroidStudio.reg" && ECHO %ComputerName% ; AndroidStudio ; Register ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; AndroidStudio ; Register ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 XCopy /y /e /c /h /r /i "%PATH_PROGRAMS%\SDK" "%ProgramData%\Android\SDK" && ECHO %ComputerName% ; AndroidStudio ; SDK_Copy ; OK ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log" || ECHO %ComputerName% ; AndroidStudio ; SDK_Copy ; FAIL ; %date% ; %time% >> "%PATH_LOGS%\%~n0.log"
 
-REM popd
+REM popd

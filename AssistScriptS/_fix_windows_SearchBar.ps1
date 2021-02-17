@@ -1,0 +1,1 @@
+Get-AppxPackage -allusers | foreach {add-appxpackage -disabledevelopmentmode -register "$($_.installlocation)\appxmanifest.xml"}

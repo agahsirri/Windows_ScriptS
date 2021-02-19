@@ -1,0 +1,1 @@
+powershell -executionPolicy bypass -file "\\172.2.5.1\Software\ProgramS\_ScriptS\_set_DomainComputerName.ps1"

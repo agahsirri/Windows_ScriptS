@@ -1,5 +1,5 @@
 @ECHO off
-CLS
+REM CLS
 COLOR 0C
 ECHO            ________________________LEGAL DISCLAIMER AND NOTICES_______________________
 ECHO           ^|                                                                          ^|
@@ -29,7 +29,47 @@ TimeOut 10
 ECHO .
 COLOR 0A
 
+SET PATH_MAIN=%~dp0
+IF NOT EXIST "%PATH_MAIN%\psexec.exe" (
+	ECHO Process.exe not exist, and it is starting to download. Please wait...
+	SET ExtractTo="%tmp%\PSTools"
+	SET newzipfile="%tmp%\PSTools\PSTools.zip"
+	SET PATH_CURRENT=%CD%
+	ECHO "%ExtractTo%"
+	ECHO "%newzipfile%"
+	IF NOT EXIST "%ExtractTo%" MKDIR "%ExtractTo%"
+	CD /D "%ExtractTo%"
+	curl http://download.sysinternals.com/files/PSTools.zip -O PSTools.zip
+	IF EXIST "%newzipfile%" ( 
+		SET vbs="%tmp%\_.vbs"
+		IF EXIST %vbs% DEL /F /Q %vbs%
+		ECHO>%vbs% ^Set fso ^= CreateObject^("Scripting.FileSystemObject"^)
+		ECHO>>%vbs% If NOT fso.FolderExists^(%ExtractTo%^) Then
+		ECHO>>%vbs% fso.CreateFolder^(%ExtractTo%^)
+		ECHO>>%vbs% End If
+		ECHO>>%vbs% ^set objShell = CreateObject^("Shell.Application"^)
+		ECHO>>%vbs% ^set FilesInZip = objShell.NameSpace^(%newzipfile%^).items
+		ECHO>>%vbs% objShell.NameSpace^(%ExtractTo%^).CopyHere^(FilesInZip^)
+		ECHO>>%vbs% ^Set fso = Nothing
+		ECHO>>%vbs% ^Set objShell = Nothing
+		cscript //nologo %vbs%
+		IF EXIST %vbs% DEL /F /Q %vbs%
+		IF EXIST "%ExtractTo%\PsExec.exe" COPY /Y "%ExtractTo%\PsExec.exe" "%PATH_MAIN%"
+		If %errorlevel% NEQ 0 (
+			ECHO "Copy Process occurs error while copy process: %newzipfile% -> %PATH_MAIN%; ErrorCode:%errorlevel%"
+			ECHO "You can get the PsExec.exe file where extracted path: %newzipfile%, and copy to %PATH_MAIN%; ErrorCode:%errorlevel%"
+		)
+		If %errorlevel% EQU 0 (
+			ECHO "Copy Process is complated: %newzipfile% -> %PATH_MAIN%; ErrorCode:%errorlevel%"
+			IF EXIST %ExtractTo% RMDIR /S /Q %ExtractTo%
+		)
+REM		IF EXIST "%PATH_MAIN%\psexec.exe" MOVE /Y "%PATH_MAIN%\psexec.exe" "%PATH_MAIN%\Process.exe" && ECHO "Rename Process is complated" || ECHO "Rename Process occurs error"
+		CD %PATH_CURRENT%
+	)
+)
+
 :RestartMenu
+MODE CON COLS=108
 COLOR 0A
 SET PATH_MAIN=%~dp0
 SET "InputValue="
@@ -120,44 +160,6 @@ SET /P USRNAME="Please enter an username who should member of Administrators Gro
 	If Not Defined PASSW (EndLocal &Set "PASSW=%Key%") Else For /F delims^=^ eol^= %%# In ("!PASSW!") Do EndLocal &Set "PASSW=%%#%Key%"
 	Goto :HILoop
 	:HIEnd
-
-IF NOT EXIST "%PATH_MAIN%\psexec.exe" (
-	ECHO Process.exe not exist, and it is starting to download. Please wait...
-	SET ExtractTo="%temp%\PSTools"
-	SET newzipfile="%temp%\PSTools\PSTools.zip"
-	SET PATH_CURRENT=%CD%
-	ECHO "%ExtractTo%"
-	ECHO "%newzipfile%"
-	IF NOT EXIST "%ExtractTo%" MKDIR "%ExtractTo%"
-	CD /D "%ExtractTo%"
-	curl http://download.sysinternals.com/files/PSTools.zip -O PSTools.zip
-	IF EXIST "%newzipfile%" ( 
-		SET vbs="%temp%\_.vbs"
-		IF EXIST %vbs% DEL /F /Q %vbs%
-		ECHO>%vbs% ^Set fso ^= CreateObject^("Scripting.FileSystemObject"^)
-		ECHO>>%vbs% If NOT fso.FolderExists^(%ExtractTo%^) Then
-		ECHO>>%vbs% fso.CreateFolder^(%ExtractTo%^)
-		ECHO>>%vbs% End If
-		ECHO>>%vbs% ^set objShell = CreateObject^("Shell.Application"^)
-		ECHO>>%vbs% ^set FilesInZip = objShell.NameSpace^(%newzipfile%^).items
-		ECHO>>%vbs% objShell.NameSpace^(%ExtractTo%^).CopyHere^(FilesInZip^)
-		ECHO>>%vbs% ^Set fso = Nothing
-		ECHO>>%vbs% ^Set objShell = Nothing
-		cscript //nologo %vbs%
-		IF EXIST %vbs% DEL /F /Q %vbs%
-		IF EXIST "%ExtractTo%\PsExec.exe" COPY /Y "%ExtractTo%\PsExec.exe" "%PATH_MAIN%"
-		If %errorlevel% NEQ 0 (
-			ECHO "Copy Process occurs error while copy process: %newzipfile% -> %PATH_MAIN%; ErrorCode:%errorlevel%"
-			ECHO "You can get the PsExec.exe file where extracted path: %newzipfile%, and copy to %PATH_MAIN%; ErrorCode:%errorlevel%"
-		)
-		If %errorlevel% EQU 0 (
-			ECHO "Copy Process is complated: %newzipfile% -> %PATH_MAIN%; ErrorCode:%errorlevel%"
-			IF EXIST %ExtractTo% RMDIR /S /Q %ExtractTo%
-		)
-REM		IF EXIST "%PATH_MAIN%\psexec.exe" MOVE /Y "%PATH_MAIN%\psexec.exe" "%PATH_MAIN%\Process.exe" && ECHO "Rename Process is complated" || ECHO "Rename Process occurs error"
-		CD %PATH_CURRENT%
-	)
-)
 
 REM @ECHO ON
 FOR /L %%C IN (1,1,%IndexElement%) DO (

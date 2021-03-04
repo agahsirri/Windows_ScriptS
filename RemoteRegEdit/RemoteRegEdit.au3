@@ -27,4 +27,5 @@ Send("c")
 WinWaitActive("Select Computer")
 Send($RemoteHostname)
 Send("{ENTER}")
+Sleep(500)
 ; Finished!
